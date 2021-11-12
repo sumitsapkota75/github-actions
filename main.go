@@ -10,7 +10,7 @@ func main() {
 
 	http.HandleFunc("/health-check", helloHandler)
 
-	log.Println("Listning for requests at http://localhost:8000/hello")
+	log.Println("Listning for requests at http://localhost:8000/health-check")
 	log.Fatal(http.ListenAndServe(":8000", nil))
 }
 
