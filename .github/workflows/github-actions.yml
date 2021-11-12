@@ -16,7 +16,7 @@ jobs:
   build-file:
     runs-on: ubuntu-latest
     steps: 
-      -name : Install Go
+      - name : Install Go
         uses: actions/setup-go@v2
         with:
           go-version: '1.16' # The Go version to download (if necessary) and use.
