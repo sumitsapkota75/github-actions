@@ -1,8 +1,8 @@
 
-name: super-linter-action
+name: github-actions
 on: [push]
 jobs:
-  check-bats-version:
+  linting-job:
     runs-on: ubuntu-latest
     steps:
       - name: checkout code
@@ -13,4 +13,12 @@ jobs:
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: github_actions
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      
+  build-file:
+    runs-on: ubuntu-latest
+    steps: 
+      -name : Install Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: '1.16' # The Go version to download (if necessary) and use.
+      - name: Run the code
+        run: go run main.go
