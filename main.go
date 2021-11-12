@@ -8,13 +8,10 @@ import (
 
 func main() {
 	http.HandleFunc("/health-check", helloHandler)
-	
+
 	log.Println("Listning for requests at http://localhost:8000/health-check")
 	log.Fatal(http.ListenAndServe(":8000", nil))
 }
-
-
-
 
 func helloHandler(w http.ResponseWriter, req *http.Request) {
 
