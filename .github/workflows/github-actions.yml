@@ -13,9 +13,6 @@ jobs:
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: github_actions
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-  build-file:
-    runs-on: ubuntu-latest
-    steps: 
       - name : Install Go
         uses: actions/setup-go@v2
         with:
